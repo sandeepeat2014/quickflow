@@ -24,4 +24,9 @@ steps:
 
 - script: |
     composer install --no-interaction --prefer-dist
+    git config --global user.email "sandeepprasad@eaton.com"
+    git config --global user.name "sandeepeat2014"
+    git add .
+    git commit -m "Quickstart dependecies added"
+    git push origin HEAD:master --force
   displayName: 'composer install'
