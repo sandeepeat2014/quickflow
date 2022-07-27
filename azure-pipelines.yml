@@ -35,6 +35,7 @@ steps:
     cd Quickstart
     rm -rf .git
     cd..
+    git branch master
     git add .
     git commit -m "Quickstart added"
     git branch master
