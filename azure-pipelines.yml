@@ -23,12 +23,11 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
+    git clone https://github.com/sandeepeat2014/quickflow.git
+    
     composer create-project --keep-vcs neos/flow-base-distribution Quickstart
-    cd Quickstart
-    git init
-    git add .
-    git branch master
-    git commit -m "first commit"
-    git add remote origin https://github.com/sandeepeat2014/quickflow.git
+
+    cp -R Quickstart quickflow/
+
     git push
   displayName: 'composer install'
