@@ -22,7 +22,7 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   # Environment name
-  environmentName: 'environment-name'
+  environmentName: 'Dev'
   # Root folder under which your composer.json file is available.
   rootFolder: $(System.DefaultWorkingDirectory)
 
