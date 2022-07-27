@@ -13,10 +13,6 @@ variables:
   phpVersion: 7.2
 
 steps:
-- checkout: self
-  persistCredentials: true
-
-
 - script: |
     sudo update-alternatives --set php /usr/bin/php$(phpVersion)
     sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
@@ -27,18 +23,5 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
-    cd $(Build.SourcesDirectory)/quickflow
-    git config --global user.email "sandeepprasad@eaton.com"
-    git config --global user.name "sandeepeat2014"
-    
-    composer create-project --keep-vcs neos/flow-base-distribution Quickstart
-    cd Quickstart
-    rm -rf .git
-    cd..
-    
-    git add .
-    git commit -m "Quickstart added"
-    git branch master
-    git push origin HEAD:master --force
-
+    composer install --no-interaction --prefer-dist
   displayName: 'composer install'
