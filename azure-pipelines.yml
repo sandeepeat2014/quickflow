@@ -32,6 +32,9 @@ steps:
     git config --global user.name "sandeepeat2014"
     
     composer create-project --keep-vcs neos/flow-base-distribution Quickstart
+    cd Quickstart
+    rm -rf .git
+    cd..
     git add .
     git commit -m "Quickstart added"
     git push
