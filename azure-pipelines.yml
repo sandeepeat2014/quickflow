@@ -77,11 +77,20 @@ stages:
         deploy:
           steps:
 
+          # - task: AzureWebApp@1
+          #   inputs:
+          #     appType: webApp
+          #     azureSubscription: ${{ parameters.subid }}
+          #     appName: $(webAppName)
+          #     package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+
+          #   displayName: 'Deploy Azure Web App'
+          
           - task: AzureWebApp@1
             inputs:
-              appType: webApp
-              azureSubscription: ${{ parameters.subid }}
-              appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-
+              azureSubscription: 'cyme-ci-cd'
+              appType: 'webApp'
+              appName: 'quickflow'
+              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              deploymentMethod: 'auto'
             displayName: 'Deploy Azure Web App'
