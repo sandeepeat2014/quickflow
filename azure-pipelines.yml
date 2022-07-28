@@ -9,16 +9,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-parameters:
-- name: subid
-  displayName: subscription-id
-  type: string
+# parameters:
+# - name: subid
+#   displayName: subscription-id
+#   type: string
   
 variables:
   # Azure Resource Manager connection created during pipeline creation
   # azureSubscription: 'subscription-id'
   # Web app name
-  # webAppName: 'quickflow'
+  webAppName: 'quickflow'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   # Environment name
