@@ -79,7 +79,7 @@ stages:
 
           - task: AzureWebApp@1
             inputs:
-              appType: webAppLinux
+              appType: webApp
               azureSubscription: ${{ parameters.subid }}
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
